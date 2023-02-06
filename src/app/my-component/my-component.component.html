@@ -1,0 +1,19 @@
+<div class="header flex">
+    <div [class.active]="data===cars" (click)="CarsClick()" class="button flex">Cars</div>
+    <div [class.active]="data===jets" (click)="JetsClick()" class="button flex">Jets</div>
+    <div [class.active]="data===ships" (click)="ShipsClick()" class="button flex">Ships</div>
+</div>
+
+<div class="grid">
+    <img *ngFor="let item of data" src={{item}} alt="">
+</div>
+
+<script src="jquery-3.6.1.min.js"></script>
+<script>
+    $('.button').on("click",function(){
+
+        $(this).closest(".header").find(".active").removeClass("active");
+        $(this).addClass("active");
+        console.log("hsuhfuh");
+    });
+</script>
